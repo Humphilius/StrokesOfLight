@@ -18,12 +18,14 @@ var people = 0;
 // event-handler for new incoming connections
 io.on('connection', function(socket) {
    people++;
-   socket.on('disconnect', function() {
-      people--;
-   });
-
    io.emit('introduce', {
       people: people
+   });
+   socket.on('disconnect', function() {
+      people--;
+      io.emit('introduce', {
+      people: people
+   });
    });
    for (var i in line_history) {
       socket.emit('draw_line', {
