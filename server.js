@@ -22,7 +22,7 @@ io.on('connection', function(socket) {
       people--;
    });
 
-   socket.emit('introduce', {
+   io.emit('introduce', {
       people: people
    });
    for (var i in line_history) {
