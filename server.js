@@ -9,7 +9,7 @@ var io = socketIo.listen(server);
 server.listen(process.env.PORT || 8080);
 // add directory with our static files
 app.use(express.static(__dirname + '/public'));
-console.log("Server running on http://strokesoflight-madskills88.c9users.io/:8080");
+console.log("Server runnings");
 
 // array of all lines drawn
 var line_history = [];
